@@ -46,6 +46,23 @@ Esto está en *cursiva*
 4. git push origin main → subir commit a GitHub
 
 --------------------------------------------------------------------------------------------------------------
+#### GitHub
+
+GitHub es una plataforma basada en la nube que permite alojar repositorios Git y colaborar con otros desarrolladores.
+
+1. Conceptos clave
+Repositorio (repo): Lugar donde se guarda el código.
+Commit: Registro de un cambio en el código.
+Branch (rama): Versión paralela del proyecto.
+
+2. Flujo de trabajo básico
+Crear o clonar un repositorio.
+Crear una rama para trabajar.
+Hacer cambios y confirmarlos (commit).
+Subir los cambios (push).
+Crear un Pull Request para fusionar en la rama principal.
+
+--------------------------------------------------------------------------------------------------------------
 
 # Introducción a HTML
 
@@ -57,20 +74,18 @@ Es lo más importante de Internet: sin HTML no se vería nada en el navegador.
 
 Etiquetas básicas de HTML:
 
-1. <html> ... </html> → Documento completo
+1. html ... /html → Documento completo
 
-2. <head> ... </head> → Información de la página (metadatos, título, enlaces a CSS/JS)
+2. head ... /head → Información de la página (metadatos, título, enlaces a CSS/JS)
 
-3. <body> ... </body> → Contenido visible en la web
+3. body ... /body → Contenido visible en la web
 
-4. <p> → Párrafo
+4. p → Párrafo
 
-5. <h1> ... <h6> → Encabezados (del más grande al más pequeño)
+5. h1 ... h6 → Encabezados (del más grande al más pequeño)
 
 **HTML (HyperText Markup Language)** es el lenguaje estándar utilizado para crear páginas web.  
 Es la base de todo Internet: sin HTML, los navegadores no podrían mostrar ningún contenido.
-
----
 
 ## Funciones de HTML
 
@@ -78,8 +93,6 @@ Es la base de todo Internet: sin HTML, los navegadores no podrían mostrar ning�
   Ejemplos: texto, imágenes, listas, enlaces, párrafos, títulos, etc.
 - **No define la apariencia** del sitio (eso se hace con **CSS**).
 - Es un lenguaje **lógico, estructurado y fácil de entender**.
-
----
 
 ## Etiquetas Básicas de HTML
 
@@ -90,8 +103,6 @@ Es la base de todo Internet: sin HTML, los navegadores no podrían mostrar ning�
 | `<body> ... </body>` | Incluye el contenido visible en la web |
 | `<p>` | Define un párrafo |
 | `<h1>` ... `<h6>` | Define encabezados (del más grande al más pequeño) |
-
----
 
 ## Atributos en HTML
 
