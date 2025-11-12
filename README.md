@@ -3,6 +3,10 @@
 ### Es mi primera toma de contacto con GitHub.
 #### Soy Daniel Vega Macias
 
+------------------------------------------------------------------------
+
+## Markdown
+
 Esto está __negrita__
 Esto está en **negrita**
 
@@ -32,9 +36,36 @@ Esto está en *cursiva*
 | 20 | Ponfe | JH |
 --------------------------------------------------------------------------------------------------------------
 
+#### GIT
+
+###### Comandos GIT
+
+1. git init → iniciar
+2. git add → añadir
+3. git commit -m (nombre para el commit) → hacer commit
+4. git push origin main → subir commit a GitHub
+
+--------------------------------------------------------------------------------------------------------------
+
 # Introducción a HTML
 
 ## ¿Qué es HTML?
+
+HTML (HyperText Markup Language):
+Lenguaje estándar para crear páginas web.
+Es lo más importante de Internet: sin HTML no se vería nada en el navegador.
+
+Etiquetas básicas de HTML:
+
+1. <html> ... </html> → Documento completo
+
+2. <head> ... </head> → Información de la página (metadatos, título, enlaces a CSS/JS)
+
+3. <body> ... </body> → Contenido visible en la web
+
+4. <p> → Párrafo
+
+5. <h1> ... <h6> → Encabezados (del más grande al más pequeño)
 
 **HTML (HyperText Markup Language)** es el lenguaje estándar utilizado para crear páginas web.  
 Es la base de todo Internet: sin HTML, los navegadores no podrían mostrar ningún contenido.
