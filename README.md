@@ -21,8 +21,6 @@ Esto está en *cursiva*
     * Elemento desordenado 1.2
     * Elemento desordenado 2.2
 
-eefihgusbhldfujpowqengkhleifrnqeipf wiuewn 4wiht ewihlg erihlg eworg 42uigj rwgjokrw nbij wonbgrih2jong gfhfnfjmtyjtryhetebejokeojrleroiwgjlbnkjrvjo2igjlwbn eriugoihwrn vdojkruo
-
 [link](https://markdown.es/ "Manual oficial markdown")
 
 ![alt text](./fali.jpg "Imagen Fali")
@@ -32,3 +30,43 @@ eefihgusbhldfujpowqengkhleifrnqeipf wiuewn 4wiht ewihlg erihlg eworg 42uigj rwgj
 | 77 | Cadiz | Fali |
 | 33 | Levante | Etta Eyong |
 | 20 | Ponfe | JH |
+--------------------------------------------------------------------------------------------------------------
+
+# Introducción a HTML
+
+## ¿Qué es HTML?
+
+**HTML (HyperText Markup Language)** es el lenguaje estándar utilizado para crear páginas web.  
+Es la base de todo Internet: sin HTML, los navegadores no podrían mostrar ningún contenido.
+
+---
+
+## Funciones de HTML
+
+- Define la **estructura** y el **contenido** de una página web.  
+  Ejemplos: texto, imágenes, listas, enlaces, párrafos, títulos, etc.
+- **No define la apariencia** del sitio (eso se hace con **CSS**).
+- Es un lenguaje **lógico, estructurado y fácil de entender**.
+
+---
+
+## Etiquetas Básicas de HTML
+
+| Etiqueta | Descripción |
+|-----------|--------------|
+| `<html> ... </html>` | Define el documento completo |
+| `<head> ... </head>` | Contiene información de la página (metadatos, título, enlaces a CSS/JS) |
+| `<body> ... </body>` | Incluye el contenido visible en la web |
+| `<p>` | Define un párrafo |
+| `<h1>` ... `<h6>` | Define encabezados (del más grande al más pequeño) |
+
+---
+
+## Atributos en HTML
+
+Los **atributos** son información adicional que se agrega a los elementos HTML.  
+No son visibles en la página, pero modifican su comportamiento o estilo.
+
+**Estructura:**
+```html
+<elemento atributo="valor">Contenido</elemento>
