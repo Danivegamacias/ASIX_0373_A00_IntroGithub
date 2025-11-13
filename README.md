@@ -94,6 +94,112 @@ Es la base de todo Internet: sin HTML, los navegadores no podrían mostrar ning�
 - **No define la apariencia** del sitio (eso se hace con **CSS**).
 - Es un lenguaje **lógico, estructurado y fácil de entender**.
 
+## Formularios en HTML
+
+```
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASIX-0373-IntroHTML</title>
+</head>
+    <body>
+    <!--A continuación he puesto un encabezado -->
+        <h1>Introducción HTML</h1>
+    
+        <p>Lorem</p><strong>Impus dolor</strong>
+
+    <form action="URLdeDestino" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        
+        <br>
+
+        <label for="realname">Nombre real:</label>
+        <input type="text" name="realname" id="realname">
+        <input type="radio" name="carnet" value="carnetsi">
+    </form>
+
+  <table border="1">
+    <thead>
+        <tr>
+            <td>ORDEN</td>
+            <td>ATLETA</td>
+            <td>TIEMPO</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td >Iker</td>
+            <td>03:51:02</td>
+        </tr>
+        <tr>
+            <td rowspan="2">2</td>
+            <td colspan="2">Juan</td>
+        </tr>
+        <tr>
+            <td>Dani</td>
+            <td>03:51:02</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>ORDEN</td>
+            <td>ATLETA</td>
+            <td>TIMEPO</td>
+        </tr>
+    </tfoot>
+
+
+
+    </table>
+    <caption>Tabla </caption>
+
+        <form action="URLdeDestino.html" method="GET">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required>
+            <br>
+            <label for="realname">Nombre real:</label>
+            <input type="text" name="realname" id="realname">
+            <br>
+
+            <fieldset>
+                <legend>Carnet de conducir</legend>
+                <label for="carnetsi">SI:</label>
+                <input type="radio" name="carnet" value="carnetsi" id="carnetsi">
+                <label for="carnetno">NO:</label>
+                <input type="radio" name="carnet" value="carnetno" id="carnetno">
+            </fieldset>
+        <br>
+            <fieldset>
+                <legend>Gustos musicales</legend>
+                <label for="pop">Pop:</label>
+                <input type="checkbox" name="musica[]" value="pop" id="pop">
+                <label for="heavy">Heavy:</label>
+                <input type="checkbox" name="musica[]" value="heavy" id="heavy">
+                <label for="pachanga">Pachanga:</label>
+                <input type="checkbox" name="musica[]" value="pachanga" id="pachanga">
+            </fieldset>
+        <br>
+        <label for="nacioniladidad">Nacionalidad:</label>
+            <select name="Nacionalidad" id="nacioniladidad">
+                <option value="españa">España</option>
+                <option value="EEUU">EEUU</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Francia">Francia</option>
+            </select>
+            <br>
+            <label for="observaciones">Observaciones:</label><br>
+            <textarea name="observaciones" id="observaciones" cols="25" rows="3" placeholder="Introduce aqui cualquier observacion que tengas"></textarea>
+        <br>
+            <button type="submit" name="Enviar" value="enviar">Enviar Datos</button>
+        </form>
+    </body>
+</html>
+```
+
 ## Etiquetas Básicas de HTML
 
 | Etiqueta | Descripción |
