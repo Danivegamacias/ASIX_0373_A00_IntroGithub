@@ -115,20 +115,90 @@ GitHub es una plataforma en la nube que se utiliza para almacenar y gestionar pr
 Es el lenguaje estándar utilizado para crear páginas web.  
 Es la base de todo Internet: sin HTML, los navegadores no podrían mostrar ningún contenido.
 
-### Etiquetas básicas de HTML:
-
-1. `<html> ... </html>` → Documento completo  
-2. `<head> ... </head>` → Información de la página (metadatos, título, enlaces a CSS/JS)  
-3. `<body> ... </body>` → Contenido visible en la web  
-4. `<p>` → Párrafo  
-5. `<h1> ... <h6>` → Encabezados (del más grande al más pequeño)
-
 ## Funciones de HTML
 
 - Define la **estructura** y el **contenido** de una página web.  
   Ejemplos: texto, imágenes, listas, enlaces, párrafos, títulos, etc.
 - **No define la apariencia** del sitio (eso se hace con **CSS**).
 - Es un lenguaje **lógico, estructurado y fácil de entender**.
+
+### Etiquetas básicas de HTML:
+
+##### Estructura principal
+
+```
+<!DOCTYPE html> --> Declara el tipo de documento
+<html> --> Elemento raíz de la página
+<head> --> Contiene información de la página (metadatos)
+<title> --> Título de la página que aparece en la pestaña
+<meta>  --> Información sobre la página, como codificación y descripción
+<link> --> Vincula archivos externos, como CSS
+</head>
+<body> --> Contenido visible de la página
+</body>
+</html>
+```
+##### Texto y encabezados
+
+```
+<h1> ... </h1> --> Encabezado principal
+<h2> ... </h2> --> Encabezado secundario, hasta h6
+<p> ... </p> --> Párrafo
+<br> --> Salto de línea
+<hr> --> Línea horizontal / separador
+```
+#### Formato de texto
+
+```
+<strong> ... </strong> --> Negrita
+<b> ... </b> Negrita
+```
+
+### Listas
+
+```
+Lista desordenada -->
+
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+
+Lista ordenada -->
+
+<ol>
+  <li>Primer elemento</li>
+  <li>Segundo elemento</li>
+</ol>
+```
+
+## Enlaces e imágenes
+```
+Hipervínculo --> <a href="https://ejemplo.com">Enlace</a>
+Imagen --><img src="imagen.jpg" alt="Descripción">
+```
+
+## Tablas
+```
+<table>
+  <tr> --> Fila
+    <th>Encabezado</th> --> Celda de encabezado
+    <th>Encabezado 2</th>
+  </tr>
+  <tr>
+    <td>Dato 1</td> --> Celda de datos
+    <td>Dato 2</td>
+  </tr>
+</table>
+```
+
+##
+```
+Contenedor genérico --> <div> ... </div>
+Contenedor en línea --> <span> ... </span>
+Dejar espacio --> <br>
+Poner linea --> <hr>
+```
 
 ## Formularios en HTML
 
