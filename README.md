@@ -607,6 +607,7 @@ En el modelo de caja los elementos HTML se representan como cajas. Por defecto, 
 
 #### Margen
 El margen representa el área transparente que rodea la caja o dicho de otra manera que el espacio que la separará de los elementos contiguos. En la siguiente lista muestro los tipos de margenes.
+
     - margin-top --> margen superior
     - margin-right --> margen derecho
     - margin-left --> margen izquierdo
@@ -631,9 +632,11 @@ section {
 
 #### Overflow
 Suele pasar que el contenido de una caja de tamaño fijo sobresalga de las dimensiones de ella misma ya que por defecto overflow tiene el valor "visible".
+
     - overflow: hidden --> Oculta el contenido que desborda la caja.
     - overflow: scroll --> Recorta el contenido y el navegador pone unas barras de navegación
     - overflow: auto --> Dependiendo del navegador o dispositivo pondra o no las barras de navegación.
+
 #### Text-overflow
 Este tipo de composición se usa para poder recortar el texto que se encuentra de una caja sin mostrar lo que cabe en el contenedor
 
