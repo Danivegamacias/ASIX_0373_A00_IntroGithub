@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de selectores CSS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+    <style>
+        #especial {
+            color: brown;
+        }
+
+        .resaltado {
+            font-weight: bold;
+        }
+
+        * {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        div[data-role="info"] {
+            color: purple;
+        }
+
+        div +p {
+            text-decoration: underline;
+        }
+
+        h2 + p {
+            font-size: 20px;
+        }
+
+        a:link {
+            color: chartreuse;
+        }
+
+        a:hover {
+            color: cadetblue;
+        }
+
+        p::first-letter {
+            font-weight: bold;
+            color: blue;
+        }
+
+        .monsieur-la-doulaise-regular {
+            font-family: "Monsieur La Doulaise", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1 class="monsieur-la-doulaise-regular">Práctica de selectores CSS</h1>
+    <a href="falla.html" alt="link">Enlace de prueba</a>
+
+    <div>
+        <h2 id="especial">Título de sección</h2>
+        <p>Primer párrafo dentro del div.</p>
+        <p class="resaltado">Párrafo con clase "resaltado".</p>
+        <p>Párrafo con ID "especial" y atributo data-role="info".</p>
+
+        <ul>
+            <li class="resaltado">
+                Elemento 1
+                <p>Párrafo dentro del li 1</p>
+            </li>
+            <li>
+                Elemento 2
+                <p>Párrafo dentro del li 2</p>
+            </li>
+            <li>
+                Elemento 3
+                <p>Párrafo dentro del li 3</p>ssss
+            </li>
+        </ul>
+    </div>
+
+    <h2>Otra sección</h2>
+    <p>Primer párrafo fuera del div.</p>
+    <p>Segundo párrafo fuera del div.</p>
+
+    <div data-role="info">
+        <p>Un div más para practicar selectores hijos y descendientes.</p>
+        <span>Un span con clase "resaltado".</span>
+    </div>
+
+</body>
+</html>

@@ -310,3 +310,382 @@ Poner linea --> <hr>
 </body>
 </html>
 ```
+--------------------------------------------------------------------------------------------------------------
+## CSS
+
+### CSS: Evolución y función
+En los inicios de la web, las páginas HTML se encargaban tanto del contenido como de la apariencia visual, lo que generaba un código muy difícil de leer y saturado. Para solucionar esto y separar la estructura de la presentación, se crearon las Hojas de Estilo en Cascada (CSS). Mientras que HTML define qué es cada elemento, CSS le indica al navegador cómo debe mostrarlo.
+
+La creación de CSS fue el resultado de un proceso de selección por parte del W3C, que en los años 90 evaluó diversas propuestas hasta estandarizar el CSS Level 1 a finales de 1996. Posteriormente, el lenguaje continuó evolucionando con la llegada de CSS Level 2 en 1998 y su revisión más conocida, CSS 2.1 que es la que se usa actualmente.
+
+![CSS](./img/img1.png "LOGO CSS")
+![CSS línea](./img/img2.png "Linea del tiempo")
+
+### CSS: Ventajas e inconvenientes
+Las ventajas de usar hojas de estilo son:
+
+    - Posibilidad de mantener el código más fácilmente
+
+    - A nivel de diseño, CSS es más potente que las etiquetas de diseño de (X)HTML.
+
+    - CSS es un lenguaje sencillo.
+
+    - Se pueden definir diferentes hojas de estilo para un solo documento (X)HTML, por ejemplo, un estilo para la página web cuando se visita desde un ordenador y otra para cuando queramos imprimiria.
+
+    - Se pueden reutilizar desde diferentes documentos (X)HTML.
+
+El gran inconveniente es que no todos los navegadores se comportan de la misma forma ante una hoja de estilo dado que algunos no cumplen con los estándares establecidos. Así, obligan al programador a crear diferentes hojas de estilo.
+
+### Ubicación
+Los estilos se pueden asociar de diferentes maneras a los elementos (X)HTML dado que se pueden ubicar las propiedades CSS en diferentes ubicaciones:
+
+#### - Inline
+Es la forma más directa de aplicar estilos en Markdown, ya que la mayoría de los procesadores aceptan etiquetas HTML básicas. Su usa directamente en la etiqueta de contenido.
+
+```css
+<p style="color: blue; font-size: 20px;">Este es un párrafo azul.</p>
+```
+
+#### - Interno. En la cabecera del documento (X)HTML.
+En la cabecera del documento (X)HTML: (estilo INTERNO) Podemos poner diferentes propiedades CSS dentro del elemento "style", dentro del elemento "head" del documento. 
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <style>
+        p {
+            text-align:center;
+            color:red
+        }
+    </style>
+</head>
+<body>
+    <p>Párrafo centrado rojo</p>
+    <p>Párrafo centrado rojo</p>
+    <p>Párrafo centrado rojo</p>
+</body>
+</html>
+```
+
+#### - Estilo Externo
+En un documento externo: (estilo externo) Se coloca las propiedades de estilo en un documento externo con extensión .css y desde el documento (X)HTML se enlaza con esta hoja de estilo con la etiqueta "link" dentro del elemento "head".
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="estils.css" type="text/css" />
+</head>
+<body>
+    <p>Párrafo centrado rojo</p>
+</body>
+</html>
+```
+
+### Prioridad
+
+Podría darse el caso de que varias delaraciones CSS afectasen de forma diferente a un mismo elemento HTML, así pues, cual de ellas es la que tendrà preferencia?
+
+    - En primer lugar, se comprueba si existe una hoja de estilos externa asociada al documento HTML (estilo externo). Si no estilos en otras ubicaciones son las que se     ejecutarán.
+
+    - En segundo lugar, si hay alguna definición de estilos en el HEAD del documento HTML (estilo interno). En este caso, si alguna definición contradice a la definida en la hora de estilos externa, tendrá prioridad la definición del estilo interno.
+
+    - Por último, si hay alguna definición de estilos "inline", en la propia etiqueta HTML, en caso de contradicción, tendrá prioridad la definida en la propia etiqueta.
+
+Se ha de tener en cuenta también que el orden dentro de cada estilo es importante, teniendo más prioridad "por regla general los situado más abajo en el documento y que en caso de que haya declaraciones sobre un mismo elemento en diferentes ámbitos que no sean contradictorias.
+
+#### 1. Especificidad
+
+La especificidad se calcula en función de un sistema de puntuación basado en las partes del selector:
+
+- Inline styles (atributo style en HTML):
+Especificidad=1000.
+- Ejemplo: 
+```html
+<div style="color: red;">.
+```
+- Selectores de ID (#id):
+Especificidad=100.
+- Ejemplo:
+```css
+#header 
+```
+
+- Selectores de clase, atributos y pseudoclases (class, [attr value], hover)
+Especificidad=10.
+- Ejemplo: 
+```css
+main, [type="text"], focus.
+```
+- Selectores de elementos y pseudoelementos (h1, p. before):
+Especificidad 1.
+- Ejemplo: 
+```css
+h1, p.
+```
+
+- Universal selector (*), combinadores (+,>,-) y pseudo-clases universales (is, not) no suman especificidad por si mismos.
+
+#### 2. Orden de aparición
+Si dos selectores tienen la misma especificidad, gana el último declarado en el archivo CSS o en las hojas vinculadas.
+
+#### 3. Reglas importantes (!important)
+Una regla con !important sobrescribe cualquier otra regla, independientemente de la especificidad
+
+- Ejemplo: color: red !important; tendrà prioridad sobre cualquier otra regla, incluso si tiene menor. especificidad.
+
+#### 4. Herencia
+Propiedades como color, font-family, etc., pueden heredarse, pero tienen menor prioridad que una regla aplicada directamente.
+
+#### Ejemplo
+
+En estos dos ejemplos podemos ver que el resultado final sera "color: red" debido al uso de !important.
+
+- HTML
+```html
+<div id="main" class="box">
+    <h1 style="color: green;">Hola</h1>
+</div>
+```
+- CSS
+```css
+h1 { color: blue; } /* Especificidad: 1 */
+.box h1 { color: yellow; } /* Especificidad: 11 */
+#main h1 { color: orange; } /* Especificidad: 101 */
+h1 { color: red !important; } /* Sobrescribe todo */
+```
+
+### Sintaxis básica CSS
+Una hoja de estilos se compone de reglas que determinan la apariencia de un documento. Cada regla consta de dos partes fundamentales: el selector, que identifica a qué elementos se les aplicará el diseño, y el bloque de declaraciones, que contiene las instrucciones visuales.
+
+A su vez, cada declaración define una propiedad específica (como el color o el tamaño) y el valor que se le asigna. En resumen, el selector elige "quién" recibe el estilo y las declaraciones definen "qué" aspecto tendrá.
+
+- Ejemplo
+```css
+selector {
+    declaración_1
+    declaración_2
+    ...
+}
+```
+
+- Ejemplo Práctico
+```css
+p {
+font-size: 18pt;
+hackground-color: gray;
+}
+```
+· Donde p es el selector, que tiene dos declaraciones con la estructura propiedad: valor
+
+### Comentarios
+
+En CSS solo existen los comentarios de bloque, delimitados por /* comentario */ al final. A diferencia de otros lenguajes, no admite comentarios de una sola línea (como //), pero su formato permite que el texto ocupe varias líneas sin problemas. El navegador ignora completamente este contenido, por lo que se utilizan exclusivamente para organizar el código o dejar notas para los desarrolladores.
+
+```css
+/*Esto es un comentario en CSS*/
+```
+
+### Agrupar selectores
+Para no repetir información, podemos agrupar las declaraciones de estilo que queremos aplicar a diferentes selectores. Así por ejemplo, para aplicar el mismo estilo a kl y a p, podríamos escribir.
+```css
+h1 {color:blue}
+p {color: blue}
+```
+Pero no es la forma ideal de hacer las cosas ya que repetimos información. Por lo tanto, podemos scorter el CSS agrupando los selectores con una coma, de fonna que las reglas que se pongan entre las llaves se aplican a todos los selectores indicados
+```css
+h1,p {color: red}
+```
+
+### Selectores
+
+#### Selector de elementos
+Corresponde a todos los elementos de este nombre en la página. Muestro esta ejemplo que afectarí a todos los elementos "p" (párrafos) del documento HTML.
+```css
+p{
+    color: blue;
+}
+```
+#### Selector de id
+Este selector corresponde a todos los elementos HTML que tienen un atributo id con el valor que le hemos puesto. Muestro dos apartados donde vemos el ejemplo del html donde vemos que le he puesto el "id=ejemplo" y despues como se usa en CSS que basicamente es poner una "#" y seguidamente el nombre del id.
+
+- HTML
+```html
+<h1 id=ejemplo>Hola</h1>
+```
+- CSS
+```css
+#ejemplo {
+    color: blue;
+}
+```
+
+#### Selector de clase
+Se basa en que todos los elementos que tengan el mismo atributo "class" donde para reconocerlo en el HTML se pone el atributo "class" mencionado y en CSS se pondria un "." seguido del nombre que le hayamos puesto a la clase.
+
+- HTML
+```html
+<h1 class=ejemplo>Hola</h1>
+```
+- CSS
+```css
+.ejemplo {
+    color: blue;
+}
+```
+
+### Selectores avanzados
+
+#### Selector universal
+Este selector se usa para poder seleccionar todos los elemtos de la página. Como se puede ver en el ejemplo se usa el asterísco "*" ya que es lo que hace que se seleccione toda la pagina.
+
+```css
+* {
+    border: 20px solid #FFFFFF;
+    color: green;
+}
+```
+
+#### Selector de atributos
+Este tipo de selector permite seleccionar elementos en funcion de los atributos que contienen, como se puede ver en el ejemplo solo quedarán afectados todos los elemtos "a" con el atributo "alt"
+
+```css
+img[alt] {
+    border: 2px solid #FFFFFF;
+}
+```
+
+#### Selectores hijos
+Se usan para seleccionar elementos concretos que son hijos de directorios y se utiliza el símbolo ">" para seleccionarlo como podemos ver en el ejemplo que pondra todos los textos que sean "strong" dentro de "p" en color rojo
+```css
+p>strong {
+    color: red;
+}
+```
+
+#### Selectores descendientes
+Este tipo de selector es parecido al anterior pero la principal diferencia es que no solo seleccionan los elementos descendientes si no que este tipo también pueden seleccionar los elementos indicados en cualquier punto. 
+
+#### Selectores hermanos adyacentes
+Permite seleccionar un elemento concreto que aparece direcamente después del otro elemento al mismo nivel. En el ejemplo podemos ver que si quisiera reducir el espacio vertical entre "h1" y "h2" pero no afectar al "h3" como se ve en el HTML utilizariamos el símbolo "+" como se puede ver en el ejemplo que se puede ver en el apartado de CSS.
+
+- HTML
+```html
+<h1>Mi nombre es</h1>
+<h1>Daniel</h1> <!-- hermano adyacente -->
+<h3>Vega Macias</h3> <!-- hermano no adyacente -->
+```
+- CSS
+```css
+h1+h2 {
+    margin-top: -3mm;
+}
+```
+
+#### Pseudoclases
+Las pseudoclases se usan para definir estilos, uno de sus usos más frecuentes es aplicar estilos los estados de los links. Seguidamente muestro las diferntes pseudoclases:
+    - :link --> El estado normal de los enlaces
+    - :visited --> Enlaces que ya se han visitado con el navegador
+    - :focus --> Enlaces que tienen en ese momento el cursor en su interior
+    - :hover --> Enlaces que tienen el puntero sobre el
+
+#### Pseudoelementos
+Los pseudoelementos permiten añadir estilos a una parte en concreta como por ejemplo el "::first-line" que unicamente selecciona la primera línea.
+
+```css
+/* Selecciona la primera línea de un párrafo*/
+p::first-line{
+    color: blue;
+}
+```
+
+### Composición
+En el modelo de caja los elementos HTML se representan como cajas. Por defecto, muchos elementos (como div o encabezados) ocupan todo el ancho disponible y se apilan uno sobre otro. Para controlar el diseño, se utilizan tres propiedades principales:
+
+![CSS](./img/img4.png "modelo de caja")
+
+#### Margen
+El margen representa el área transparente que rodea la caja o dicho de otra manera que el espacio que la separará de los elementos contiguos. En la siguiente lista muestro los tipos de margenes.
+    - margin-top --> margen superior
+    - margin-right --> margen derecho
+    - margin-left --> margen izquierdo
+    - margin-bottom --> margen inferior
+
+#### Bordes
+Representan la línea que rodea el contenido y el relleno del elemento. Se define mediante su grosor (que nunca puede ser negativo), su estilo  y su color. Al igual que el margen, se puede aplicar a los cuatro lados de forma independiente.
+
+#### Relleno
+Es el espacio entre el borde del elemento y su contenido. También se puede dividir en cuatro propiedades específicas para cada lado.
+
+### Reglas de posicionamiento
+
+#### Display: block
+La propiedad display determina cómo un elemento se comporta en la página en terminos de su modelo de caja que he explicado antes y el flujo del diseño. Lo que hace es controlar si un elemento se muestra como un bloque, inline, flex, grid...
+
+```css
+section {
+    display: block;
+}
+```
+
+#### Overflow
+Suele pasar que el contenido de una caja de tamaño fijo sobresalga de las dimensiones de ella misma ya que por defecto overflow tiene el valor "visible".
+    - overflow: hidden --> Oculta el contenido que desborda la caja.
+    - overflow: scroll --> Recorta el contenido y el navegador pone unas barras de navegación
+    - overflow: auto --> Dependiendo del navegador o dispositivo pondra o no las barras de navegación.
+#### Text-overflow
+Este tipo de composición se usa para poder recortar el texto que se encuentra de una caja sin mostrar lo que cabe en el contenedor
+
+    - text overflow: clip --> Básicamente es el valor por defecto explicado anteiormente
+    - texto overflow: ellipsis --> Se usa en el caso de que no quepa, corta el texto y pone unos puntos suspensivos para indicar que hay más texto a continuación
+
+#### Display: Flex 
+Flex básicamente es un sistema de elementos flexibles en la que los elementos HTML se adaptan y colocan automáticamente.
+
+![CSS](./img/img3.png "LOGO CSS")
+
+### Diseño Responsive
+
+El diseño responsive es una técnica de diseño web que permite que un sitio web se adapte a diferentes dispositivos como puede ser un portátil, móvil, tablet ...
+![CSS](./img/img5.png "Diseño Responsive")
+
+#### Características
+    - Fexible y adaptable --> El diseño y los elementos se ajustan al tamaño de la pantalla
+    - Media queries --> Se usan para aplicar estilos según el ancho y alto de la pantalla
+    - Rejillas fluidas --> El tamaño de los contenedores se basan en porcentajes en lugar de valores fijos.
+    - Imagenes --> Se ajustan para mantener la proporcion en diferentes dispositivos
+#### Ejemplo de Diseño Resposive
+```html
+<div>
+  <section class="columna">Dani</section>
+  <section class="columna">Vega</section>
+  <section class="columna">Macias</section>
+</div>
+```
+
+```css
+@media (max-width: 500px) {
+  .columna {
+    width: 100%; /* Ahora cada columna ocupa todo el ancho y se apilan */
+  }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
