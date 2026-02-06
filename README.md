@@ -9,6 +9,13 @@
 
 Markdown es un lenguaje que se usa para dar formato a texto de manera sencilla.
 
+# Encabezado 1
+## Encabezado 2
+### Encabezado 3
+#### Encabezado 4
+##### Encabezado 5
+###### Encabezado 6
+
 Esto está __negrita__  
 Esto está en **negrita**
 
@@ -17,6 +24,7 @@ Esto está en *cursiva*
 
 **_TEXTO_**
 
+#### Lista ordenada
 1. Elemento 1
     * Elemento desordenado 1.1
     * Elemento desordenado 1.2
@@ -27,82 +35,80 @@ Esto está en *cursiva*
     * Elemento desordenado 3.1
     * Elemento desordenado 3.2
 
-[link](https://markdown.es/ "Manual oficial markdown")
+#### Lista ordenada con anexado
+1. Elemento 1
+    * Elemento desordenado 1.1
+    * Elemento desordenado 1.2
+2. Elemento 2
+    * Elemento desordenado 2.1
+    * Elemento desordenado 2.2
+3. Elemento 3
+    * Elemento desordenado 3.1
+    * Elemento desordenado 3.2
 
+#### Lista desordenada
+- Elemento 1
+- Elemento 2
+- Elemento 3 
+
+#### Link en Markdown
+[link para el manual oficial de markdown](https://markdown.es/ "Manual oficial markdown")
+![alt text](./img/imgmarkdown1.png "Link")
+#### Foto en markdown
 ![alt text](./fali.jpg "Imagen Fali")
+![alt text](./img/imgmarkdown2.png "Imagen Fali")
+
 
 | Jugador | dorsal | nombre |
 |-------|:----------:|:------------------|
 | 77 | Cadiz | Fali |
 | 33 | Levante | Etta Eyong |
 | 20 | Ponfe | JH |
+![alt text](./img/imgmarkdown3.png "Tabla")
 
+#### HTML en Markdown
+Se usan 3 acentos abiertos y entre medio de dos filas de 3 acentos pondremos nuestro HTML
+```html
+<p>Hola mi nombre es Dani</p>
+```
 --------------------------------------------------------------------------------------------------------------
 
-#### GIT
-
-Git es un sistema de control de versiones distribuido. Esto significa que permite registrar los cambios de archivos y proyectos a lo largo del tiempo, de forma que puedas:
-
-1. Volver a versiones anteriores si algo sale mal.
-2. Trabajar en equipo sin perder cambios de otros.
-3. Mantener un historial completo de todas las modificaciones.
-4. Conceptos clave de Git
-5. Repositorio (repo): Carpeta donde Git guarda todo el historial de un proyecto.
-6. Commit: Guardar un cambio específico en el historial del proyecto.
-7. Branch (rama): Línea paralela de desarrollo para trabajar sin afectar la versión principal.
-8. Merge: Combinar los cambios de una rama con otra.
-9. Push: Subir los cambios locales a un servidor remoto (como GitHub).
-10. Pull: Traer los cambios de un repositorio remoto a tu máquina local.
-
-###### Comandos GIT
-
-1. git init → iniciar
-2. git add → añadir
-3. git commit -m "nombre para el commit" → hacer commit
-4. git push origin main → subir commit a GitHub
-
---------------------------------------------------------------------------------------------------------------
-
-#### GitHub
+### GitHub
 
 GitHub es una plataforma en la nube que se utiliza para almacenar y gestionar proyectos que usan Git. Es como un lugar online donde los desarrolladores pueden guardar su código, colaborar y compartir proyectos con otros.
 
-1. **Conceptos clave**
-    - **Repositorio (repo):** Lugar donde se guarda el código.
-    - **Commit:** Registro de un cambio en el código.
-    - **Branch (rama):** Versión paralela del proyecto.
+#### Como crear un reposiorio en Github
 
-2. **Flujo de trabajo básico**
-    - Crear o clonar un repositorio.
-    - Crear una rama para trabajar.
-    - Hacer cambios y confirmarlos (commit).
-    - Subir los cambios (push).
-    - Crear un Pull Request para fusionar en la rama principal.
+1. El primer paso es entrar en github y presionar el boton de "New" como se puede ver en la imagen marcado en color rojo.
 
-3. **Como crear un repo**
-    - Entraremos en la web de GitHub
-    - Completa los campos:
+![Github](./img/github1.png "Git Hub")
 
-        1. Repository name: Nombre del repositorio (por ejemplo, mi-primer-repo).
-        2. Description (opcional): Breve descripción del proyecto.
-        3. Public/Private:
-        4. Public: Cualquiera puede ver el repositorio.
-        5. Private: Solo tú y colaboradores invitados pueden verlo.
-    - Añadir Readme
-    - Presionar el boton de "Create Repository"
-    - Abrir la carpeta de Repositorios
-    - Ejecutar el siguinete comando en el cmd con la ruta de la carpeta de los repositorios "git clone https://github.com/tu-usuario/mi-primer-repo.git"
-    - Ya tendremos el repositorio creado
+2. El siguiente paso es ponerle nombre y descripción a nuestro repositorio donde también podemos decicidir si queremos que nuestro repositorio sea publico o privado, es obligatorio activar el README para nuestras actividades y por ulitmo presionar el boton de "Create Reposity".
 
-4. **Como hacer un commit**
-    - Primeramente necesitamos hacer cambios en nuestro archivo
-    - Entramos en la carpeta de nuestro reporsitorio
-    - Ejecutamos los siguinetes comandos en orden
-        1. git init
-        2. git add
-        3. git commit -m "nombre para el commit"
-        4. git push origin main → subir commit a GitHub
+![Github](./img/github2.png "Git Hub")
 
+3. En este paso vemos que tenemos que copiar el enlace de nuestro repo primeramente presionando el boton "Code" y depsués copiando el link.
+
+![Github](./img/github3.png "Git Hub")
+
+4. En nuestra carpeta de repositorios ejecutamos en la barra de busqueda "cmd".
+
+![Github](./img/github4.png "Git Hub")
+
+5. Ejecutaremos el comando "git clone" jutno a la URL de nuestro repo para que se nos cree la carpeta en local.
+
+![Github](./img/github5.png "Git Hub")
+
+6. Dentro de la carpeta del repo para hacer un commit ejecutaremos los siguientes comandos por orden como se ven en la imagen
+
+![Github](./img/github6.png "Git Hub")
+
+7. Presionamos el botón de "Settings" para acceder a "Pages" para poder publicar nuestro repo donde seleccionaremos el botón "Main" y "Save" para así ya tener el link a nuestro Pages.
+![Github](./img/github7.png "Git Hub")
+![Github](./img/github8.png "Git Hub")
+![Github](./img/github9.png "Git Hub")
+![Github](./img/github10.png "Git Hub")
+![Github](./img/github11.png "Git Hub")
 
 --------------------------------------------------------------------------------------------------------------
 
@@ -126,45 +132,61 @@ Es la base de todo Internet: sin HTML, los navegadores no podrían mostrar ning�
 
 ##### Estructura principal
 
-```
-<!DOCTYPE html> --> Declara el tipo de documento
-<html> --> Elemento raíz de la página
-<head> --> Contiene información de la página (metadatos)
-<title> --> Título de la página que aparece en la pestaña
-<meta>  --> Información sobre la página, como codificación y descripción
-<link> --> Vincula archivos externos, como CSS
+```html
+<!DOCTYPE html>  <!-- Declara el tipo de documento -->
+<html> <!-- Elemento raíz de la página -->
+<head> <!-- Contiene información de la página (metadatos) -->
+<title> <!-- Título de la página que aparece en la pestaña -->
+<meta>  <!--Información sobre la página, como codificación y descripción -->
+<link> <!-- Vincula archivos externos, como CSS -->
 </head>
-<body> --> Contenido visible de la página
+<body> <!-- Contenido visible de la página -->
 </body>
 </html>
 ```
+
+#### Estructura básica
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+```
+
 ##### Texto y encabezados
 
-```
-<h1> ... </h1> --> Encabezado principal
-<h2> ... </h2> --> Encabezado secundario, hasta h6
-<p> ... </p> --> Párrafo
-<br> --> Salto de línea
-<hr> --> Línea horizontal / separador
+```html
+<h1> ... </h1>  <!--Encabezado principal -->
+<h2> ... </h2> <!-- Encabezado secundario, hasta h6 -->
+<p> ... </p> <!--Párrafo -->
+<br> <!-- Salto de línea -->
+<hr> <!-- Línea horizontal / separador -->
 ```
 #### Formato de texto
 
-```
-<strong> ... </strong> --> Negrita
-<b> ... </b> Negrita
+```html
+<strong> ... </strong> <!--Negrita -->
+<b> ... </b> <!--Negrita -->
 ```
 
 ### Listas
 
-```
-Lista desordenada -->
+```html
+Lista desordenada
 
 <ul>
   <li>Item 1</li>
   <li>Item 2</li>
 </ul>
 
-Lista ordenada -->
+Lista ordenada
 
 <ol>
   <li>Primer elemento</li>
@@ -172,32 +194,34 @@ Lista ordenada -->
 </ol>
 ```
 
+![html](./img/imghtml1.png "HTML")
+
 ## Enlaces e imágenes
-```
-Hipervínculo --> <a href="https://ejemplo.com">Enlace</a>
-Imagen --><img src="imagen.jpg" alt="Descripción">
+
+```html
+Hipervínculo - <a href="https://ejemplo.com">Enlace</a>
+Imagen - <img src="imagen.jpg" alt="Descripción">
 ```
 
 ## Tablas
-```
+```html
 <table>
-  <tr> --> Fila
-    <th>Encabezado</th> --> Celda de encabezado
+  <tr>  <!--Fila -->
+    <th>Encabezado</th> <!-- Celda de encabezado-->
     <th>Encabezado 2</th>
   </tr>
   <tr>
-    <td>Dato 1</td> --> Celda de datos
+    <td>Dato 1</td> <!--Celda de datos-->
     <td>Dato 2</td>
   </tr>
 </table>
 ```
 
-##
-```
-Contenedor genérico --> <div> ... </div>
-Contenedor en línea --> <span> ... </span>
-Dejar espacio --> <br>
-Poner linea --> <hr>
+```html
+Contenedor genérico - <div> ... </div>
+Contenedor en línea - <span> ... </span>
+Dejar espacio - <br>
+Poner linea - <hr>
 ```
 
 ## Formularios en HTML
